@@ -46,14 +46,10 @@
       }
      }
 
-      .seo-hidden{
-        position:absolute; width:1px; height:1px; overflow:hidden;
-        clip:rect(1px,1px,1px,1px); white-space:nowrap;
+      
       }
 
-      @media (max-width:600px){
-        #staticMenu{ font-size:13px; padding:8px 12px }
-        #staticSlideMenu{ width:88px; height:88px }
+     
       }
     </style>
 
@@ -78,16 +74,7 @@
       window.onbeforeunload = () => "Are you sure you want to leave? Your session may be interrupted.";
 
       (function(){
-        const menu = document.getElementById("staticMenu");
-        const btn = document.getElementById("closeStaticMenu");
-        const KEY = "sq931_staticMenu_hidden_until";
-        const show = () => { if (menu) menu.style.display = "flex"; };
-        const hideFor3m = () => {
-          if (!menu) return;
-          menu.style.display = "none";
-          const until = Date.now() + 180000;
-          localStorage.setItem(KEY, String(until));
-          setTimeout(show, 180000);
+        
         };
         const until = parseInt(localStorage.getItem(KEY) || "0", 10);
         if (until && Date.now() < until){
